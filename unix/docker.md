@@ -1,3 +1,10 @@
+# Fix Docker Desktop in Ubuntu
+```
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+systemctl --user restart docker-desktop
+gpg --generate-key
+```
+
 # Docker
 ```
 docker login -u <user_name>

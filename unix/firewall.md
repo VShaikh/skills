@@ -1,5 +1,7 @@
 ## firewalld
 ```
+sudo apt install firewalld
+
 firewall-cmd --list-all
 firewall-cmd --list-all --zone=home
 firewall-cmd --list-services
