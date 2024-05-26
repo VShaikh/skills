@@ -1,0 +1,7 @@
+## Search files
+```
+find . -type f -name "*.???" -print
+find . -type f -name "*???*" -print 
+ 
+find . -type f -name "*???*" -exec mv {} /data/???/???/??? \;
+```
