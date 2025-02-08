@@ -10,4 +10,6 @@ ls -l /var/lib/snapd/snaps
 vi /etc/zsh/zprofile
 emulate sh -c 'source /etc/profile'
 
+sudo apt autoremove --purge snapd
+sudo apt-mark hold snapd
 ```

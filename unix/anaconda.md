@@ -8,4 +8,11 @@ bash ./Anaconda3-2019.03-Linux-x86_64.sh
 source /home/vahid/anaconda3/bin/activate
 cd ~/git/codepractice/machine_learning/practice
 jupyter notebook
+
+anaconda-navigator
+#conda install anaconda-navigator
+
+conda install pip
+
+conda install anaconda-clean --yes
 ```
