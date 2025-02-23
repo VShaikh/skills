@@ -1,3 +1,8 @@
+## DEB
+```
+sudo apt remove --purge docker-desktop
+```
+
 ## RPM / YUM
 
 ```
@@ -22,4 +27,5 @@ yum --disablerepo=some-repository install some-package
 yum list all --showduplicates
 package-cleanup --dupes
 package-cleanup --problems
+
 ```
