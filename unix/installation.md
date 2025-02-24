@@ -1,6 +1,7 @@
 ## DEB
 ```
 sudo apt remove --purge docker-desktop
+apt-cache depends vim
 ```
 
 ## RPM / YUM
