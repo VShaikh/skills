@@ -14,5 +14,10 @@ anaconda-navigator
 
 conda install pip
 
+conda config --remove channels conda-forge
+conda config --add channels conda-forge
+
+conda update conda
+
 conda install anaconda-clean --yes
 ```
