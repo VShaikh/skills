@@ -81,12 +81,30 @@ docker container stats
 
 docker compose down
 docker compose up -d --force-recreate
+
+
+sc stop docker
+dockerd --unregister-service
+dockerd --register-service --data-root E:\Installed\docker_data\docker
+sc start docker
+
 ```
 
 ## Jenkins
 ```
-docker pull jenkins/jenkins:2.457-jdk11
-docker run --name jenkins-service -d -p 8080:8080 -p 50000:50000 -v /data/jenkins:/var/jenkins_home jenkins/jenkins:2.457-jdk11
+mkdir "C:/data/"
+REM mklink /D /J "C:/data/jenkins/" "E:/Installed/docker_data/jenkins"
+
+del /q "E:\Installed\docker_data\jenkins\*"
+
+docker rmi jenkins/jenkins:2.522-jdk21
+
+docker pull jenkins/jenkins:2.522-jdk21
+
+docker run --name jenkins-service -d -p 8080:8080 -p 50000:50000 -v E:/Installed/docker_data/jenkins:/var/jenkins_home jenkins/jenkins:2.522-jdk21
 ```
 
-## 
+## cuda
+```
+docker pull nvidia/cuda:12.9.1-cudnn-devel-ubuntu24.04
+```

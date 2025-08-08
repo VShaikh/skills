@@ -20,4 +20,12 @@ conda config --add channels conda-forge
 conda update conda
 
 conda install anaconda-clean --yes
+conda clean --all --yes
+
+conda install -c conda-forge tensorflow
+
+conda install -n base -c conda-forge mamba
+
+
 ```
+ 
