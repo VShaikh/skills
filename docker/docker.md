@@ -88,6 +88,13 @@ dockerd --unregister-service
 dockerd --register-service --data-root E:\Installed\docker_data\docker
 sc start docker
 
+wsl -l -v
+wsl --shutdown
+wsl --export docker-desktop "E:\Installed\docker_data\wsl"
+wsl --unregister docker-desktop
+wsl --unregister podman-machine-default
+wsl --install -d docker-desktop
+
 ```
 
 ## Jenkins
