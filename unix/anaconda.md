@@ -12,6 +12,8 @@ jupyter notebook
 anaconda-navigator
 #conda install anaconda-navigator
 
+conda update anaconda-navigator
+
 conda install pip
 
 conda config --remove channels conda-forge
@@ -23,6 +25,7 @@ conda install anaconda-clean --yes
 conda clean --all --yes
 
 conda install -c conda-forge tensorflow
+conda install tensorflow
 
 conda install -n base -c conda-forge mamba
 
