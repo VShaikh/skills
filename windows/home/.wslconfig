@@ -1,0 +1,10 @@
+[wsl2]
+memory=16GB        # Limit memory for WSL2
+processors=8      # Limit CPU cores
+swap=0            # Disable swap for speed
+localhostForwarding=true
+logging:
+  driver: "none"
+
+#wsl --update
+#wsl --shutdown
