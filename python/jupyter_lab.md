@@ -24,15 +24,20 @@ pip3 install matplotlib
 pip3 install seaborn
 pip3 install nltk
 pip3 install wordcloud
-pip3 install tensorflow
+pip3 install tensorflow_gpu==2.10.0
 pip3 install keras
 pip3 install torch
 pip3 install torchvision
 pip3 install torchaudio
 
 C:\Users\Vahid\PythonInterpreters\jupyter_lab_venv\Scripts\activate
+python --version
 cd %userprofile%/git/codepractice/machine_learning
 jupyter lab
 C:\Users\Vahid\PythonInterpreters\jupyter_lab_venv\Scripts\deactivate
+
+https://www.tensorflow.org/install/source_windows#tested_build_configurations
+nvcc --version
+nvidia-smi
 
 ```
