@@ -30,7 +30,9 @@ pip3 install torch
 pip3 install torchvision
 pip3 install torchaudio
 
-
+C:\Users\Vahid\PythonInterpreters\jupyter_lab_venv\Scripts\activate
 cd %userprofile%/git/codepractice/machine_learning
 jupyter lab
+C:\Users\Vahid\PythonInterpreters\jupyter_lab_venv\Scripts\deactivate
+
 ```
