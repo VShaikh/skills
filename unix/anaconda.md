@@ -29,6 +29,10 @@ conda install tensorflow
 
 conda install -n base -c conda-forge mamba
 
-
 ```
- 
+# miniconda in wsl
+```
+conda install -c conda-forge jupyterlab
+cd /mnt/c/Users/vahid/git/codepractice/machine_learning
+jupyter lab
+```
