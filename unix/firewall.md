@@ -13,7 +13,7 @@ sudo firewall-cmd --remove-port=8983/tcp
 
 # trust an ip address
 ```
-sudo firewall-cmd --permanent --zone=trusted --add-source=192.168.1.50
+sudo firewall-cmd --permanent --zone=trusted --add-source=192.168.1.102
 sudo firewall-cmd --reload
 ```
 
