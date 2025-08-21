@@ -10,3 +10,15 @@ sudo firewall-cmd --add-port=8983/tcp
 sudo firewall-cmd --runtime-to-permanent
 sudo firewall-cmd --remove-port=8983/tcp
 ```
+
+# trust an ip address
+```
+sudo firewall-cmd --permanent --zone=trusted --add-source=192.168.1.50
+sudo firewall-cmd --reload
+```
+
+# trust whole subnet
+```
+sudo firewall-cmd --permanent --zone=trusted --add-source=192.168.1.0/24
+sudo firewall-cmd --reload
+```
