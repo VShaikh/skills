@@ -1,4 +1,4 @@
-# miniconda in windows
+# miniconda
 ```
 conda info
 conda info --envs
