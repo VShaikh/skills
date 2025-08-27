@@ -5,6 +5,11 @@ conda info --envs
 conda create -n py390 python=3.9.0
 conda activate py390
 
+conda create -n mytube-web python=3.12.0
+conda activate mytube-web
+conda deactivate
+conda env remove -n mytube-web
+
 conda deactivate
 conda env remove -n py390
 nvcc --version
@@ -30,12 +35,26 @@ pip install --upgrade pip
 
 # jupyterlab with tensorflow cpu
 ```
-conda create -n py312 python=3.12.0
+conda
+conda deactivate
+conda env remove -n py312 -y
+conda create -n py312 python=3.12.0 -y
 conda activate py312
-conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
-conda install -c conda-forge tensorflow numpy  sympy pandas scikit-learn matplotlib seaborn nltk wordcloud jupyterlab
 
-cd c:/Users/vahid/git/codepractice/machine_learning
+conda install -c conda-forge tensorflow[and-cuda] -y
+conda install -c conda-forge tensorflow -y
+
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"   # Disable GPU
+import tensorflow as tf
+
+print("Available GPUs:", tf.config.list_physical_devices('GPU'))
+
+python -c "import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')));print(tf.config.list_physical_devices('GPU'))"
+
+conda install -c conda-forge numpy sympy pandas scikit-learn matplotlib seaborn nltk wordcloud jupyterlab -y
+
+cd /home/vahid/git/coding-practice/machine_learning
 jupyter lab
 
 python -c "import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')));print(tf.config.list_physical_devices('GPU'))"
@@ -51,6 +70,11 @@ conda install -c numpy<2 conda-forge sympy pandas scikit-learn matplotlib seabor
 
 python -c "import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')));print(tf.config.list_physical_devices('GPU'))"
 python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+```
+
+# miniconda in unix
+```
+
 ```
 
 # miniconda in windows

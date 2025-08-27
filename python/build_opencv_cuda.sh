@@ -1,3 +1,6 @@
+#https://gist.github.com/minhhieutruong0705/8f0ec70c400420e0007c15c98510f133
+#https://gist.github.com/minhhieutruong0705/8f0ec70c400420e0007c15c98510f133#uninstall-built-opencv
+
 lspci | grep -i nvidia
 sudo apt install linux-headers-$(uname -r)
 
@@ -54,10 +57,27 @@ cmake \
 -D HAVE_opencv_python3=ON \
 ..
 
+
+cmake -D CMAKE_BUILD_TYPE=Release \
+      -D WITH_CUDA=OFF \
+      -D WITH_CUDNN=OFF \
+      -D WITH_OPENCL=OFF \
+      -D BUILD_opencv_cudacodec=OFF \
+      -D BUILD_opencv_cudafeatures2d=OFF \
+      -D BUILD_opencv_cudawarping=OFF \
+      -D BUILD_opencv_cudafilters=OFF \
+      -D BUILD_opencv_cudastereo=OFF \
+      -D BUILD_opencv_cudalegacy=OFF \
+      ..
+
 lscpu | grep -i "cpu(s)"
 
 make -j 8
 
-sudo make install
+sudo make uninstall
+
+sudo apt-get remove --auto-remove nvidia-cuda-toolkit
+
+
 
 sudo ldconfig
