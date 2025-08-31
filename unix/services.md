@@ -1,17 +1,17 @@
-## Create systemd / systemctl service for mytubeweb
+## Create systemd / systemctl service for mytube-web-python
 
 ```
-sudo gedit /etc/systemd/system/mytubeweb.service
+sudo gedit /etc/systemd/system/mytube-web-python.service
 
 [Unit]
-Description=Gunicorn daemon for MyTubeWeb
+Description=Gunicorn daemon for Mytube Web Python
 After=network.target
 
 [Service]
-User=root
-Group=root
-WorkingDirectory=/home/vahid/git/mytubeweb
-ExecStart=/home/vahid/python-interpreters/mytubeweb_venv/bin/gunicorn --workers 17 -threads 2 --bind 0.0.0.0:80 -m 007 mytubeweb.wsgi --log-level warn --access-logfile /var/log/mytubeweb_access.log --error-logfile /var/log/mytubeweb_error.log
+User=vahid
+Group=vahid
+WorkingDirectory=/home/vahid/git/mytube-web-python
+ExecStart=/home/vahid/miniconda3/envs/mytube-web/bin/gunicorn --workers 17 -threads 2 --bind 0.0.0.0:9001 -m 007 global.wsgi --log-level warn --access-logfile /var/log/mytube-web-python-access.log --error-logfile /var/log/mytube-web-python-error.log
 
 [Install]
 WantedBy=multi-user.target
