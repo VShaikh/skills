@@ -38,9 +38,8 @@ sudo dpkg -i sublime-text_build-4200_amd64.deb
 sudo mv Postman /opt/
 sudo chmod 755 /opt/Postman -R
 sudo chown vahid:vahid /opt/Postman -R
-
-cd /usr/share/applications/
-sudo cat <<EOF > postman.desktop
+ 
+cat <<EOF > /tmp/postman.desktop
 [Desktop Entry]
 Version=1.0
 Name=Postman
@@ -52,3 +51,13 @@ Terminal=false
 Type=Application
 
 EOF
+
+sudo mv /tmp/postman.desktop /usr/share/applications/
+
+# install solr
+tar -xvzf solr-9.9.0.tgz
+sudo mv solr-9.9.0 /opt/
+sudo ln -s /opt/solr-9.9.0 /opt/solr
+sudo chmod 755 /opt/solr -R
+sudo chown vahid:vahid /opt/solr -R
+
