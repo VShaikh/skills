@@ -1,8 +1,11 @@
 ## Environments and aliases
 ```
+cp /home/vahid/.bashrc /home/vahid/.bashrc.old
+cat <<EOF >> /home/vahid/.bashrc
+
+# custom settings
 export PATH=/home/vahid/Android/Sdk/platform-tools:$PATH
-#export PATH=/opt/flutter/bin:$PATH
-export PATH=/home/vahid/snap/flutter/common/flutter/bin:$PATH
+export PATH=/opt/flutter/bin:$PATH
 sstatus(){
   sudo systemctl status $1
 }
@@ -26,4 +29,5 @@ slog(){
     journalctl -f -u $1
   fi
 }
+EOF
 ```
