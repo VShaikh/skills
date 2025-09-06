@@ -34,7 +34,9 @@ replace_or_append_block() {
 # Call the function
 replace_or_append_block CUSTOM_SETTINGS /home/vahid/.bashrc <<'EOF'
 # custom settings
-export PATH=/home/vahid/Android/Sdk/platform-tools:$PATH
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 export PATH=/opt/flutter/bin:$PATH
 sstatus(){
   sudo systemctl status $1
