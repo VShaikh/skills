@@ -22,3 +22,9 @@ sudo firewall-cmd --reload
 sudo firewall-cmd --permanent --zone=trusted --add-source=192.168.1.0/24
 sudo firewall-cmd --reload
 ```
+
+# install gui
+```
+sudo apt install firewall-config
+sudo apt install firewalld
+```
