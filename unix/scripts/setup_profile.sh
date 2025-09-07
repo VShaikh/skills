@@ -43,6 +43,9 @@ export FLUTTER_HOME=/opt/flutter
 export DART_HOME=$FLUTTER_HOME/bin/cache/dart-sdk
 export PATH=$FLUTTER_HOME/bin:$DART_HOME/bin:$PATH
 
+export SOLR_HOME=/opt/solr
+export PATH=$SOLR_HOME/bin:$PATH
+
 sstatus(){
   sudo systemctl status $1
 }
