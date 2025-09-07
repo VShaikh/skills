@@ -24,3 +24,7 @@
 ### 22. [solr](unix/solr.md)
 ### 23. [ssh](unix/ssh.md)
 ### 24. [user_management](unix/user_management.md)
+
+```
+ln -s /home/vahid/git/skills/unix/scripts /home/vahid/scripts
+```

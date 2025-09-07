@@ -11,6 +11,9 @@ git clone git@gitlab.com:mytube/mytube-app-flutter-python
 git clone git@gitlab.com:mytube/mytube-web-python
 git clone git@gitlab.com:mytube/mytube-web-zio
 git clone git@gitlab.com:mytube/mytube-app-flutter-zio
+git clone git@gitlab.com:vs-utils/utils-python.git
+git clone git@gitlab.com:vs-utils/opencv-utils-python.git
+git clone git@gitlab.com:vs-utils/opencv-utils-scala.git
 
 # insall android studio
 tar -xvzf android-studio-2025.1.2.12-linux.tar.gz
@@ -60,3 +63,10 @@ sudo mv solr-9.9.0 /opt/
 sudo ln -s /opt/solr-9.9.0 /opt/solr
 sudo chmod 755 /opt/solr -R
 sudo chown vahid:vahid /opt/solr -R
+
+# install pycharm
+tar -xvzf pycharm-2025.2.1.1.tar.gz
+sudo mv pycharm-2025.2.1.1 /opt/
+sudo ln -s /opt/pycharm-2025.2.1.1 /opt/pycharm
+sudo chmod 755 /opt/pycharm -R
+sudo chown vahid:vahid /opt/pycharm -R
