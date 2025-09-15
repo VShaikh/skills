@@ -23,4 +23,11 @@ sudo ufw allow samba
 sudo smbpasswd -a vahid
 ```
 
+```
+smbclient -L //192.168.1.1 -N --option='client min protocol=NT1' --option='client max protocol=NT1'
+sudo mkdir -p /mnt/tplink_usb
+sudo mount -t cifs //192.168.1.1/sda1 /mnt/tplink_usb -o guest,vers=1.0
+df -h | grep tplink
+ls /mnt/tplink_usb
 
+```
