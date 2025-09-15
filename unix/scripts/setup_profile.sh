@@ -42,7 +42,7 @@ export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 export FLUTTER_HOME=/opt/flutter
 export DART_HOME=$FLUTTER_HOME/bin/cache/dart-sdk
 export PATH=$FLUTTER_HOME/bin:$DART_HOME/bin:$PATH
-
+AWS
 export SOLR_HOME=/opt/solr
 export PATH=$SOLR_HOME/bin:$PATH
 
