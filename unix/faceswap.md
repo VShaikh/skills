@@ -22,5 +22,7 @@ conda activate faceswap
 cd requirements/
 pip install -r _requirements_base.txt 
 pip install "nvidia-ml-py>=12.535,<300"
-conda install -c conda-forge tensorflow-gpu=2.10.0 cudatoolkit=11.2 cudnn=8.1
+pip install "tensorflow==2.10.0"
+pip install "numpy==1.23.5"
+conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1
 ```
