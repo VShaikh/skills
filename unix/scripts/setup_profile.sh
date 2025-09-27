@@ -1,4 +1,3 @@
-#!/usr/bin/bash
 # ln -s ~/git/skills/unix/scripts ~/scripts
 replace_or_append_block() {
     local tag="$1"
@@ -42,7 +41,7 @@ export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 export FLUTTER_HOME=/opt/flutter
 export DART_HOME=$FLUTTER_HOME/bin/cache/dart-sdk
 export PATH=$FLUTTER_HOME/bin:$DART_HOME/bin:$PATH
-AWS
+
 export SOLR_HOME=/opt/solr
 export PATH=$SOLR_HOME/bin:$PATH
 
@@ -68,6 +67,15 @@ slog(){
   else
     journalctl -f -u $1
   fi
+}
+pythonv(){
+  /home/vahid/.venv/bin/python
+}
+pipv(){
+  /home/vahid/.venv/bin/pip
+}
+pip3v(){
+  /home/vahid/.venv/bin/pip3
 }
 conda(){
   # !! Contents within this block are managed by 'conda init' !!
