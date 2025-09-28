@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/home/vahid/.venv/bin/pypi-server run -p 8080 ~/.pypi_packages/
+/home/vahid/.venv/bin/pypi-server run -p 8090 ~/.pypi_packages/

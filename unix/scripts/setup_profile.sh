@@ -30,7 +30,6 @@ replace_or_append_block() {
     rm -f "$tmpblock"
 }
 
-# Call the function
 replace_or_append_block CUSTOM_SETTINGS /home/vahid/.bashrc <<'EOF'
 # custom settings
 
@@ -91,4 +90,16 @@ conda(){
   fi
   unset __conda_setup
 }
+EOF
+
+mkdir -p /home/vahid/.config/pip/
+
+replace_or_append_block CUSTOM_SETTINGS /home/vahid/.config/pip/pip.conf <<'EOF'
+# custom settings
+[global]
+index-url = https://pypi.org/simple
+extra-index-url = http://localhost:8090/simple
+trusted-host = localhost
+
+#pip config list
 EOF
