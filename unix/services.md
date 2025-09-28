@@ -1,6 +1,6 @@
 ## Create systemd / systemctl service for mytube-web-python
 
-```
+```shell
 sudo gedit /etc/systemd/system/mytube-web-python.service
 
 [Unit]
@@ -25,7 +25,7 @@ open port 80 in firewalld
 
 ## Setup systemd / systemctl commands
 
-```
+```shell
 vi /etc/systemd/system/mytubeweb.service
 
 sudo systemctl daemon-reload
@@ -37,7 +37,7 @@ sudo systemctl show mytubeweb.service
 
 ## Create systemd / systemctl service for Solr
 
-```
+```shell
 sudo gedit /etc/systemd/system/solr.service
 
 [Unit]
@@ -70,7 +70,7 @@ sudo systemctl show solr.service
 
 ## Create systemd / systemctl service for mytubewe_zio
 
-```
+```shell
 sudo gedit /etc/systemd/system/mytubewebz.service
 
 [Unit]
@@ -91,4 +91,26 @@ sudo systemctl enable mytubewebz.service
 setenforce 0
 
 open port 80 in firewalld
+```
+
+## Create systemd / systemctl service for pypi
+```shell
+sudo gedit /etc/systemd/system/pypi.service
+
+[Unit]
+Description=Process for PyPi Server
+After=network.target
+
+[Service]
+User=vahid
+Group=vahid
+WorkingDirectory=/home/vahid/.venv/bin/
+ExecStart=/home/vahid/.venv/bin/pypi-server run -p 8090 ~/.pypi_packages/
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl daemon-reload
+sudo systemctl enable pypi.service
+
 ```

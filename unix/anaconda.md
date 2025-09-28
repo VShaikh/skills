@@ -1,6 +1,6 @@
 ## Install Anaconda
 
-```
+```bash
 apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 cd ~/Downloads
 curl -O https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
@@ -31,7 +31,7 @@ conda install -n base -c conda-forge mamba
 
 ```
 # miniconda in wsl
-```
+```bash
 conda install -c conda-forge jupyterlab
 cd /mnt/c/Users/vahid/git/codepractice/machine_learning
 jupyter lab
