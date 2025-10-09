@@ -6,11 +6,12 @@ sudo ubuntu-drivers autoinstall
 #sudo apt reinstall nvidia-driver-535
 sudo apt reinstall nvidia-driver-470
 sudo apt install nvidia-driver-550
+sudo apt install nvidia-driver-555
 
 nvidia-smi
 watch -n 1 nvidia-smi
 
-nvcc -v
+nvcc --version
 ```
 
 # install cuda

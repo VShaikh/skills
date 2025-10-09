@@ -18,8 +18,18 @@ sudo apt install bazel-bootstrap
 cd ~/git
 git clone https://github.com/tensorflow/tensorflow.git
 cd ~/git/tensorflow
-git checkout r2.16  # or desired version
+git checkout r2.15  # or desired version
 
 ./configure
 
+During prompts:
+Python path: point to your conda env
+CUDA: Yes
+CUDA version: 12.2
+cuDNN version: 8.x
+Compute capabilities: 5.2,6.0,6.1,7.0,7.5 (include 5.2 for GTX 970M)
+NCCL / TensorRT: No (optional)
+XLA JIT: Yes
+Optimization flags: Yes
+⚠️ Make sure 5.2 is included in CUDA Compute Capabilities prompt — this is crucial for your GPU.
 ```
