@@ -5,6 +5,7 @@ sudo apt install openjdk-21-jdk
 ssh-keygen -t rsa
 
 # clone git repos
+cd /home/vahid/git
 git clone git@github.com:VShaikh/skills.git
 git clone git@gitlab.com:mytube/mytube-web-fastapi-solr.git
 git clone git@gitlab.com:mytube/mytube-app-flutter-python
@@ -14,6 +15,8 @@ git clone git@gitlab.com:mytube/mytube-app-flutter-zio
 git clone git@gitlab.com:vs-utils/utils-python.git
 git clone git@gitlab.com:vs-utils/opencv-utils-python.git
 git clone git@gitlab.com:vs-utils/opencv-utils-scala.git
+git clone git@gitlab.com:vs-utils/common-utils-python.git
+git clone git@gitlab.com:vs-utils/media-utils-python.git
 
 # insall android studio
 tar -xvzf android-studio-2025.1.2.12-linux.tar.gz

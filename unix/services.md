@@ -95,6 +95,14 @@ open port 80 in firewalld
 
 ## Create systemd / systemctl service for pypi
 ```shell
+conda
+conda create -n pypi python=3.12.0 -y
+conda activate pypi
+python -m pip install --upgrade pip
+python -m pip install pypiserver
+```
+
+```shell
 sudo gedit /etc/systemd/system/pypi.service
 
 [Unit]
@@ -104,8 +112,8 @@ After=network.target
 [Service]
 User=vahid
 Group=vahid
-WorkingDirectory=/home/vahid/.venv/bin/
-ExecStart=/home/vahid/.venv/bin/pypi-server run -p 8090 ~/.pypi_packages/
+WorkingDirectory=/home/vahid/miniconda3/envs/pypi/bin/
+ExecStart=/home/vahid/miniconda3/envs/pypi/bin/pypi-server run -p 8090 ~/.pypi_packages/
 
 [Install]
 WantedBy=multi-user.target
