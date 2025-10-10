@@ -100,6 +100,7 @@ conda create -n pypi python=3.12.0 -y
 conda activate pypi
 python -m pip install --upgrade pip
 python -m pip install pypiserver
+mkdir -p /home/vahid/.pypi_packages
 ```
 
 ```shell
