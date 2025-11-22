@@ -81,6 +81,11 @@ python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 
 
 # jupyterlab with tensorflow gpu
 ```
+sudo apt install nvidia-driver-470
+sudo dpkg -i libcudnn8_8.1.1.33-1+cuda11.2_amd64.deb
+sudo dpkg -i libcudnn8-dev_8.1.1.33-1+cuda11.2_amd64.deb
+sudo dpkg -i libcudnn8-samples_8.1.1.33-1+cuda11.2_amd64.deb
+
 conda create -n py390 python=3.9.0 -y
 conda activate py390
 conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
