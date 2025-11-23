@@ -79,7 +79,7 @@ python -c "import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.
 python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
 ```
 
-# jupyterlab with tensorflow gpu
+# jupyterlab with tensorflow gpu in Ubuntu 20.04.6 LTS
 ```
 sudo apt install nvidia-driver-470
 sudo dpkg -i libcudnn8_8.1.1.33-1+cuda11.2_amd64.deb
@@ -90,16 +90,11 @@ conda create -n py390 python=3.9.0 -y
 conda activate py390
 conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
 pip install "tensorflow<2.11"
-python3 -m pip install 'tensorflow[and-cuda]==2.9.0'
+pip install "numpy==1.23.5"
 conda install -c numpy<2 conda-forge sympy pandas scikit-learn matplotlib seaborn nltk wordcloud jupyterlab
 
 python -c "import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')));print(tf.config.list_physical_devices('GPU'))"
 python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
-```
-
-# miniconda in unix
-```
-
 ```
 
 # miniconda in windows
