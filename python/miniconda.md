@@ -55,9 +55,9 @@ pip install --upgrade pip
 ```
 conda
 conda deactivate
-conda env remove -n py312 -y
-conda create -n py312 python=3.12.0 -y
-conda activate py312
+conda env remove -n ml -y
+conda create -n ml python=3.12.0 -y
+conda activate ml
 
 conda install -c conda-forge tensorflow[and-cuda] -y
 conda install -c conda-forge tensorflow -y
@@ -86,16 +86,26 @@ sudo dpkg -i libcudnn8_8.1.1.33-1+cuda11.2_amd64.deb
 sudo dpkg -i libcudnn8-dev_8.1.1.33-1+cuda11.2_amd64.deb
 sudo dpkg -i libcudnn8-samples_8.1.1.33-1+cuda11.2_amd64.deb
 
-conda create -n py390 python=3.9.0 -y
-conda activate py390
-conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
-pip install "tensorflow<2.11"
-pip install "numpy==1.23.5"
-conda install -c numpy<2 conda-forge sympy pandas scikit-learn matplotlib seaborn nltk wordcloud jupyterlab
+conda create -n ml python=3.9.0 -y
+conda activate ml
+
+#2.10.1
+pip install "tensorflow==2.9.0"
+
+conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0 "numpy<2" sympy pandas scikit-learn matplotlib seaborn nltk 
+wordcloud jupyterlab "keras<3" -y
+
 
 python -c "import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')));print(tf.config.list_physical_devices('GPU'))"
 python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+
+pip install pipdeptree
+pip install graphviz
+pipdeptree -fl | grep -v "  "
+
 ```
+cd ~/git/coding-practice/machine_learning
+jupyter lab
 
 # miniconda in windows
 

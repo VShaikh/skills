@@ -7,6 +7,7 @@ ssh-keygen -t rsa
 # clone git repos
 cd /home/vahid/git
 git clone git@github.com:VShaikh/skills.git
+git clone git@gitlab.com:vs-utils/coding-practice.git
 git clone git@gitlab.com:mytube/mytube-web-fastapi-solr.git
 git clone git@gitlab.com:mytube/mytube-app-flutter-python
 git clone git@gitlab.com:mytube/mytube-web-python
