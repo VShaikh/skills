@@ -5,3 +5,11 @@ git add .
 git status
 git commit -m "minor changes"
 git push origin
+
+# commit and push to git
+cd ~/git/coding-practice/
+git status
+git add .
+git status
+git commit -m "minor changes"
+git push origin
