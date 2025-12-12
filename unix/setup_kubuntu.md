@@ -1,10 +1,16 @@
 # install jdk
+```
 sudo apt install openjdk-21-jdk
-
+```
 # create ssh key
+```
 ssh-keygen -t rsa
-
+```
 # clone git repos
+```
+git config --global user.name "Vahid Shaikh"
+git config --global user.email "meet2vah1d@gmail.com"
+
 cd /home/vahid/git
 git clone git@github.com:VShaikh/skills.git
 git clone git@gitlab.com:vs-utils/coding-practice.git
@@ -18,30 +24,36 @@ git clone git@gitlab.com:vs-utils/opencv-utils-python.git
 git clone git@gitlab.com:vs-utils/opencv-utils-scala.git
 git clone git@gitlab.com:vs-utils/common-utils-python.git
 git clone git@gitlab.com:vs-utils/media-utils-python.git
-
+```
 # insall android studio
-tar -xvzf android-studio-2025.1.2.12-linux.tar.gz
-sudo mv android-studio-2025.1.2.12-linux.tar.gz /opt/
+```
+tar -xvzf android-studio-*.tar.gz
+sudo mv android-studio /opt/
 sudo chmod 755 /opt/android-studio -R
 sudo chown vahid:vahid /opt/android-studio -R
-
+```
 # install flutter
-tar -xvf flutter_linux_3.35.1-stable.tar.xz
+```
+tar -xvf flutter_linux_3.38.2-stable.tar.xz
 sudo mv flutter /opt/
 sudo chmod 755 /opt/flutter -R
 sudo chown vahid:vahid /opt/flutter -R
-
+```
 # install IntelliJ Idea
-tar -xvzf ideaIC-2025.2.tar.gz 
-sudo mv idea-IC-252.23892.409 /opt/
-sudo ln -s /opt/idea-IC-252.23892.409 /opt/idea
+```
+tar -xvzf ideaIC-2025.2.4.tar.gz
+sudo mv idea-IC-252.27397.103 /opt/
+sudo ln -s /opt/idea-IC-252.27397.103 /opt/idea
 sudo chmod 755 /opt/idea -R
 sudo chown vahid:vahid /opt/idea -R
-
+```
 # install sublime
+```
 sudo dpkg -i sublime-text_build-4200_amd64.deb
-
+```
 # install postman
+```
+tar -xvzf postman-linux-x64.tar.gz
 sudo mv Postman /opt/
 sudo chmod 755 /opt/Postman -R
 sudo chown vahid:vahid /opt/Postman -R
@@ -60,17 +72,26 @@ Type=Application
 EOF
 
 sudo mv /tmp/postman.desktop /usr/share/applications/
-
+```
 # install solr
+```
 tar -xvzf solr-9.9.0.tgz
 sudo mv solr-9.9.0 /opt/
 sudo ln -s /opt/solr-9.9.0 /opt/solr
 sudo chmod 755 /opt/solr -R
 sudo chown vahid:vahid /opt/solr -R
-
+```
 # install pycharm
-tar -xvzf pycharm-2025.2.1.1.tar.gz
-sudo mv pycharm-2025.2.1.1 /opt/
-sudo ln -s /opt/pycharm-2025.2.1.1 /opt/pycharm
+```
+tar -xvzf pycharm-2025.2.4.tar.gz
+sudo mv pycharm-2025.2.4 /opt/
+sudo ln -s /opt/pycharm-2025.2.4 /opt/pycharm
 sudo chmod 755 /opt/pycharm -R
 sudo chown vahid:vahid /opt/pycharm -R
+```
+
+# miniconda
+```
+./Miniconda3-latest-Linux-x86_64.sh
+```
+
