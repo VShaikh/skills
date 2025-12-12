@@ -90,8 +90,48 @@ sudo chmod 755 /opt/pycharm -R
 sudo chown vahid:vahid /opt/pycharm -R
 ```
 
+# setup profile
+```
+ln -s ~/git/skills/unix/scripts ~/scripts
+mkdir -p /home/vahid/.config/pip/
+cd scripts
+./setup_profile.sh
+```
+
 # miniconda
 ```
 ./Miniconda3-latest-Linux-x86_64.sh
+conda
+conda tos accept
 ```
 
+## create systemd / systemctl service for pypi
+```shell
+conda
+conda create -n pypi python=3.12.0 -y
+conda activate pypi
+python -m pip install --upgrade pip
+python -m pip install pypiserver
+mkdir -p /home/vahid/.pypi_packages
+```
+```shell
+sudo gedit /etc/systemd/system/pypi.service
+
+[Unit]
+Description=Process for PyPi Server
+After=network.target
+
+[Service]
+User=vahid
+Group=vahid
+WorkingDirectory=/home/vahid/miniconda3/envs/pypi/bin/
+ExecStart=/home/vahid/miniconda3/envs/pypi/bin/pypi-server run -p 8090 ~/.pypi_packages/
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl daemon-reload
+sudo systemctl enable pypi.service
+
+srestart pypi
+```
