@@ -58,6 +58,9 @@ sudo mv Postman /opt/
 sudo chmod 755 /opt/Postman -R
 sudo chown vahid:vahid /opt/Postman -R
 
+wget -D /opt/Postman/icon.png https://www.svgrepo.com/show/354202/postman-icon.svg
+mv /opt/Postman/postman-icon.svg /opt/Postman/icon.png
+
 cat <<EOF > /tmp/postman.desktop
 [Desktop Entry]
 Version=1.0
@@ -65,7 +68,7 @@ Name=Postman
 Comment=Postman Desktop
 Exec=/opt/Postman/Postman
 Path=/opt/Postman/
-Icon=/opt/Postman/app/icons/icon_128x128.png
+Icon=/opt/Postman/icon.png
 Terminal=false
 Type=Application
 

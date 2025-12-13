@@ -1,6 +1,26 @@
 ## Desktop shortcuts
 
 ```
+mkdir /opt/kdenlive/
+wget -D /opt/kdenlive/icon.png https://discuss-cdn.kde.org/uploads/default/original/2X/2/2de3adc075365366f68ce84da881a5a9d4c9efc4.png
+sudo gedit /usr/share/applications/kdenlive.desktop
+[Desktop Entry]
+Version=2023.2.1
+Name=Kdenlive
+GenericName=IDE
+Exec=/opt/kdenlive/kdenlive-25.08.3-x86_64.AppImage
+Icon=/opt/kdenlive/icon.png
+Terminal=false
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;
+Actions=new-window;new-private-window;profile-manager-window;
+
+X-Desktop-File-Install-Version=0.26
+
+
 sudo ln -s /opt/idea-IC-232.9559.62 /opt/intellij
 sudo vi /usr/bin/intellij
 #!/bin/bash
