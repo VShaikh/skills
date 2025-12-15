@@ -19,6 +19,7 @@ git clone git@gitlab.com:mytube/mytube-app-flutter-python
 git clone git@gitlab.com:mytube/mytube-web-python
 git clone git@gitlab.com:mytube/mytube-web-zio
 git clone git@gitlab.com:mytube/mytube-app-flutter-zio
+git clone git@gitlab.com:mytube/mytube-app-flutter-zio-hig
 git clone git@gitlab.com:vs-utils/utils-python.git
 git clone git@gitlab.com:vs-utils/opencv-utils-python.git
 git clone git@gitlab.com:vs-utils/opencv-utils-scala.git
