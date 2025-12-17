@@ -40,7 +40,7 @@ export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 export FLUTTER_HOME=/opt/flutter
 export DART_HOME=$FLUTTER_HOME/bin/cache/dart-sdk
 export PATH=$FLUTTER_HOME/bin:$DART_HOME/bin:$PATH
-export PATH=/.pub-cache/bin:$PATH
+export PATH=$HOME/.pub-cache/bin:$PATH
 
 export SOLR_HOME=/opt/solr
 export PATH=$SOLR_HOME/bin:$PATH
@@ -48,6 +48,8 @@ export PATH=$SOLR_HOME/bin:$PATH
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export CUDA_HOME=/usr/local/cuda
+
+export CUDA_VISIBLE_DEVICES=-1
 
 sstatus(){
   sudo systemctl status $1

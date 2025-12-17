@@ -63,7 +63,7 @@ conda install -c conda-forge tensorflow[and-cuda] -y
 conda install -c conda-forge tensorflow -y
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"   # Disable GPU
+#os.environ["CUDA_VISIBLE_DEVICES"] = "-1"   # Disable GPU
 import tensorflow as tf
 
 print("Available GPUs:", tf.config.list_physical_devices('GPU'))

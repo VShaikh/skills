@@ -9,12 +9,21 @@ firewall-cmd --list-ports
 sudo firewall-cmd --add-port=8983/tcp
 sudo firewall-cmd --runtime-to-permanent
 sudo firewall-cmd --remove-port=8983/tcp
+
+sudo firewall-cmd --list-ports
+sudo firewall-cmd --get-active-zones
 ```
 
-# trust an ip address
+# trust an ip address or port
 ```
 sudo firewall-cmd --permanent --zone=trusted --add-source=192.168.1.102
 sudo firewall-cmd --reload
+
+sudo firewall-cmd --zone=pubic --add-port=9000/tcp --permanent
+sudo firewall-cmd --zone=pubic --add-port=9001/tcp --permanent
+sudo firewall-cmd --reload
+
+
 ```
 
 # trust whole subnet
