@@ -13,6 +13,8 @@ git config --global user.email "meet2vah1d@gmail.com"
 
 cd /home/vahid/git
 git clone git@github.com:VShaikh/skills.git
+git clone git@github.com:VShaikh/flutter_utils.git
+git clone git@github.com:VShaikh/flu_console.git
 git clone git@gitlab.com:vs-utils/coding-practice.git
 git clone git@gitlab.com:mytube/mytube-web-fastapi-solr.git
 git clone git@gitlab.com:mytube/mytube-app-flutter-python

@@ -59,7 +59,6 @@ conda env remove -n ml -y
 conda create -n ml python=3.12.0 -y
 conda activate ml
 
-conda install -c conda-forge tensorflow[and-cuda] -y
 conda install -c conda-forge tensorflow -y
 
 import os
