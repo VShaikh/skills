@@ -59,6 +59,34 @@ conda env remove -n ml -y
 conda create -n ml python=3.12.0 -y
 conda activate ml
 
+conda create -n ml -c conda-forge \
+    python=3.12 \
+    numpy=1.26.4 \
+    pandas=2.2.3 \
+    matplotlib=3.8.4 \
+    seaborn=0.13.2 \
+    scikit-learn=1.4.2 \
+    sympy=1.12 \
+    nltk=3.8.1 \
+    wordcloud=1.9.3 \
+    jupyterlab=4.1.5 \
+    scipy=1.13.1 \
+    statsmodels=0.14.2
+
+conda create -n ml_39_stable -c conda-forge \
+    python=3.9.0 \
+    numpy=1.23.5 \
+    pandas=1.5.3 \
+    matplotlib=3.5.3 \
+    seaborn=0.12.2 \
+    scikit-learn=1.2.2 \
+    sympy=1.11.1 \
+    nltk=3.8.1 \
+    wordcloud=1.9.2 \
+    jupyterlab=3.6.3 \
+    scipy=1.10.1 \
+    statsmodels=0.13.5
+
 conda install -c conda-forge tensorflow -y
 
 import os
@@ -69,7 +97,7 @@ print("Available GPUs:", tf.config.list_physical_devices('GPU'))
 
 python -c "import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')));print(tf.config.list_physical_devices('GPU'))"
 
-conda install -c conda-forge numpy sympy pandas scikit-learn matplotlib seaborn nltk wordcloud jupyterlab -y
+conda install -c conda-forge numpy sympy pandas scikit-learn matplotlib=3.8 seaborn nltk wordcloud jupyterlab -y
 
 cd /home/vahid/git/coding-practice/machine_learning
 jupyter lab
