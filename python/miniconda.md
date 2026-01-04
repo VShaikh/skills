@@ -1,5 +1,5 @@
 # conda init
-```
+```shell
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/vahid/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -17,7 +17,7 @@ unset __conda_setup
 ```
 
 # miniconda
-```
+```shell
 conda info
 conda info --envs
 conda create -n py390 python=3.9.0
@@ -52,7 +52,7 @@ pip install --upgrade pip
 ```
 
 # jupyterlab with tensorflow cpu
-```
+```shell
 conda
 conda deactivate
 conda env remove -n ml -y
@@ -71,7 +71,8 @@ conda create -n ml -c conda-forge \
     wordcloud=1.9.3 \
     jupyterlab=4.1.5 \
     scipy=1.13.1 \
-    statsmodels=0.14.2
+    statsmodels=0.14.2 \
+    media_utils_python
 
 conda create -n ml_39_stable -c conda-forge \
     python=3.9.0 \
@@ -85,7 +86,8 @@ conda create -n ml_39_stable -c conda-forge \
     wordcloud=1.9.2 \
     jupyterlab=3.6.3 \
     scipy=1.10.1 \
-    statsmodels=0.13.5
+    statsmodels=0.13.5 \
+    media_utils_python
 
 conda install -c conda-forge tensorflow -y
 
@@ -107,7 +109,7 @@ python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 
 ```
 
 # jupyterlab with tensorflow gpu in Ubuntu 20.04.6 LTS
-```
+```shell
 sudo apt install nvidia-driver-470
 sudo dpkg -i libcudnn8_8.1.1.33-1+cuda11.2_amd64.deb
 sudo dpkg -i libcudnn8-dev_8.1.1.33-1+cuda11.2_amd64.deb
@@ -140,7 +142,7 @@ jupyter lab
 
 # miniconda in windows
 
-```
+```shell
 curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe -o .\miniconda.exe
 start /wait "" .\miniconda.exe /S
 del .\miniconda.exe
@@ -150,8 +152,15 @@ conda install -c conda-forge tensorflow<2.11 sympy pandas scikit-learn matplotli
 
 # miniconda in wsl
 
-```
+```shell
 conda install -c conda-forge jupyterlab
 cd /mnt/c/Users/vahid/git/codepractice/machine_learning
 jupyter lab
+```
+
+# setup pytorch
+```shell
+conda create -n torch_fix python=3.11 -y
+conda activate torch_fix
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 ```
