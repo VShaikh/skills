@@ -72,8 +72,12 @@ conda create -n ml -c conda-forge \
     jupyterlab=4.1.5 \
     scipy=1.13.1 \
     statsmodels=0.14.2 \
-    media_utils_python
-
+    tensorflow-cpu=2.16.1 \
+    keras=3.3.3 \
+    ipywidgets
+pip install media-utils-python
+    
+# used earlier
 conda create -n ml_39_stable -c conda-forge \
     python=3.9.0 \
     numpy=1.23.5 \
@@ -87,9 +91,12 @@ conda create -n ml_39_stable -c conda-forge \
     jupyterlab=3.6.3 \
     scipy=1.10.1 \
     statsmodels=0.13.5 \
+    tensorflow-cpu=2.10.0 \
+    keras=2.10.0 \
     media_utils_python
-
 conda install -c conda-forge tensorflow -y
+
+pip install --force-reinstall --no-deps media-utils-python
 
 import os
 #os.environ["CUDA_VISIBLE_DEVICES"] = "-1"   # Disable GPU
@@ -160,6 +167,8 @@ jupyter lab
 
 # setup pytorch
 ```shell
+pip cache purge
+
 conda create -n torch_fix python=3.11 -y
 conda activate torch_fix
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
