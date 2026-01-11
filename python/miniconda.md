@@ -98,6 +98,8 @@ conda install -c conda-forge tensorflow -y
 
 pip install --force-reinstall --no-deps media-utils-python
 
+pip install --force-reinstall --no-deps common-utils-python
+
 import os
 #os.environ["CUDA_VISIBLE_DEVICES"] = "-1"   # Disable GPU
 import tensorflow as tf
