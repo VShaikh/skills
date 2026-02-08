@@ -20,3 +20,12 @@ sudo chown -R vahid:vahid /var/run/jenkins
 sudo chown -R vahid:vahid /var/cache/jenkins
 
 ```
+
+## Make jenkins to run as root or any other user
+```shell
+sudo vi /etc/sudoers.d/jenkins
+jenkins ALL=(ALL) NOPASSWD: ALL
+
+sudo su jenkins
+sudo -l
+```
