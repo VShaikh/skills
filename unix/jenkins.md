@@ -1,24 +1,13 @@
 ## Install jenkins
 
 ```shell
-sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
-sudo yum install jenkins
-
-sudo -u jenkins /bin/bash
-cd ~/.ssh/
-#copy all private and public keys
-#run git clone command and verify host key
-
-
-/etc/systemd/system/multi-user.target.wants/jenkins.service
-
-
-sudo chown -R vahid:vahid /var/log/jenkins
-sudo chown -R vahid:vahid /var/lib/jenkins
-sudo chown -R vahid:vahid /var/run/jenkins
-sudo chown -R vahid:vahid /var/cache/jenkins
-
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt update
+sudo apt install jenkins -y
 ```
 
 ## Make jenkins to run as root or any other user
