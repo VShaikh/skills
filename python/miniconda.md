@@ -121,13 +121,28 @@ python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 
 ```shell
 sudo apt install nvidia-driver-470
 
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
-sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
-wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda-repo-ubuntu2004-11-2-local_11.2.2-460.32.03-1_amd64.deb
-sudo dpkg -i cuda-repo-ubuntu2004-11-2-local_11.2.2-460.32.03-1_amd64.deb
-sudo apt-key add /var/cuda-repo-ubuntu2004-11-2-local/7fa2af80.pub
-sudo apt-get update
-sudo apt-get -y install cuda
+wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda_11.2.2_460.32.03_linux.run
+sudo sh cuda_11.2.2_460.32.03_linux.run
+
+===========
+= Summary =
+===========
+
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-11.2/
+Samples:  Installed in /home/vahid/, but missing recommended libraries
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-11.2/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-11.2/lib64, or, add /usr/local/cuda-11.2/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-11.2/bin
+***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 460.00 is required for CUDA 11.2 functionality to work.
+To install the driver using this installer, run the following command, replacing <CudaInstaller> with the name of this run file:
+    sudo <CudaInstaller>.run --silent --driver
+
+Logfile is /var/log/cuda-installer.log
+
 
 sudo dpkg -i libcudnn8_8.1.1.33-1+cuda11.2_amd64.deb
 sudo dpkg -i libcudnn8-dev_8.1.1.33-1+cuda11.2_amd64.deb
@@ -141,7 +156,6 @@ conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0 "numpy<2" -y
 pip install "media_utils_python" --no-cache-dir --force-reinstall
 #pip install "tensorflow-gpu==2.9.0"
 conda install -c conda-forge sympy pandas scikit-learn matplotlib seaborn nltk wordcloud jupyterlab -y
-
 
 conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0 "numpy<2" sympy pandas scikit-learn matplotlib seaborn nltk 
 wordcloud jupyterlab "keras<3" -y
