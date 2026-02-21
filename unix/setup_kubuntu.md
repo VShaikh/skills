@@ -42,11 +42,16 @@ sudo chown vahid:vahid /opt/android-studio -R
 ```
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa
+sudo apt-get install -y clang cmake ninja-build libgtk-3-dev mesa-utils
+sudo apt install mesa-utils-extra
 
 tar -xvf flutter_linux_3.38.2-stable.tar.xz
 sudo mv flutter /opt/
 sudo chmod 755 /opt/flutter -R
 sudo chown vahid:vahid /opt/flutter -R
+
+flutter doctor --android-licenses
+flutter doctor
 ```
 # install IntelliJ Idea
 ```
