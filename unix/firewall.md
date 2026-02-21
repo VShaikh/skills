@@ -1,6 +1,6 @@
 ## firewalld
 ```
-sudo apt install firewalld
+sudo apt install firewalld -y
 
 firewall-cmd --list-all
 firewall-cmd --list-all --zone=home
