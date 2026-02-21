@@ -60,6 +60,7 @@ sudo mv idea-IC-252.27397.103 /opt/
 sudo ln -s /opt/idea-IC-252.27397.103 /opt/idea
 sudo chmod 755 /opt/idea -R
 sudo chown vahid:vahid /opt/idea -R
+/opt/idea/bin/idea
 ```
 # install sublime
 ```
