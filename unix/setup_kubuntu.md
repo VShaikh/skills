@@ -1,6 +1,6 @@
 # install jdk
 ```
-sudo apt install openjdk-21-jdk
+sudo apt install openjdk-21-jdk -y
 ```
 # create ssh key
 ```
@@ -11,6 +11,7 @@ ssh-keygen -t rsa
 git config --global user.name "Vahid Shaikh"
 git config --global user.email "meet2vah1d@gmail.com"
 
+mkdir /home/vahid/git
 cd /home/vahid/git
 git clone git@github.com:VShaikh/skills.git
 git clone git@github.com:VShaikh/flutter_utils.git
@@ -34,9 +35,14 @@ tar -xvzf android-studio-*.tar.gz
 sudo mv android-studio /opt/
 sudo chmod 755 /opt/android-studio -R
 sudo chown vahid:vahid /opt/android-studio -R
+/opt/android-studio/bin/studio
+
 ```
 # install flutter
 ```
+sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa
+
 tar -xvf flutter_linux_3.38.2-stable.tar.xz
 sudo mv flutter /opt/
 sudo chmod 755 /opt/flutter -R
@@ -100,6 +106,7 @@ sudo chown vahid:vahid /opt/pycharm -R
 ```
 ln -s ~/git/skills/unix/scripts ~/scripts
 mkdir -p /home/vahid/.config/pip/
+touch /home/vahid/.config/pip/pip.conf
 cd scripts
 ./setup_profile.sh
 ```
