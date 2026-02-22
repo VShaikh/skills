@@ -25,7 +25,7 @@ git clone git@gitlab.com:mytube/mytube-app-flutter-zio
 git clone git@gitlab.com:mytube/mytube-app-flutter-zio-hig
 git clone git@gitlab.com:vs-utils/utils-python.git
 git clone git@gitlab.com:vs-utils/opencv-utils-python.git
-git clone git@gitlab.com:vs-utils/opencv-utils-scala.git
+git clone git@gitlab.com:vs-utils/media-utils-scala.git
 git clone git@gitlab.com:vs-utils/common-utils-python.git
 git clone git@gitlab.com:vs-utils/media-utils-python.git
 ```
@@ -106,6 +106,7 @@ sudo mv pycharm-2025.2.4 /opt/
 sudo ln -s /opt/pycharm-2025.2.4 /opt/pycharm
 sudo chmod 755 /opt/pycharm -R
 sudo chown vahid:vahid /opt/pycharm -R
+/opt/pycharm/bin/pycharm
 ```
 
 # setup profile

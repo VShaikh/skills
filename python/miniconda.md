@@ -152,13 +152,24 @@ conda env remove -n ml -y
 conda create -n ml python=3.9.0 -y
 conda activate ml
 
-conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0 "numpy<2" -y
+# conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0 "numpy<2" -y
 pip install "media_utils_python" --no-cache-dir --force-reinstall
-#pip install "tensorflow-gpu==2.9.0"
-conda install -c conda-forge sympy pandas scikit-learn matplotlib seaborn nltk wordcloud jupyterlab -y
+pip install "tensorflow-gpu==2.9.0"
+# conda install -c conda-forge sympy pandas scikit-learn matplotlib seaborn nltk wordcloud jupyterlab -y
 
-conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0 "numpy<2" sympy pandas scikit-learn matplotlib seaborn nltk 
-wordcloud jupyterlab "keras<3" -y
+conda install -c conda-forge \
+                 cudatoolkit=11.2 \
+                 cudnn=8.1.0 \
+                 "numpy<2" \
+                 sympy \
+                 pandas \
+                 scikit-learn \
+                 matplotlib \
+                 seaborn \
+                 nltk \
+                 wordcloud \
+                 jupyterlab \
+                 "keras<3" -y
 
 python -c "import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')));print(tf.config.list_physical_devices('GPU'))"
 python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
