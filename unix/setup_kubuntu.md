@@ -1,3 +1,9 @@
+# install basic packages
+```
+sudo apt update -y 
+sudo apt install gedit –y 
+sudo apt install git -y 
+```
 # install jdk
 ```
 sudo apt install openjdk-21-jdk -y
@@ -25,6 +31,7 @@ git clone git@gitlab.com:mytube/mytube-app-flutter-zio
 git clone git@gitlab.com:mytube/mytube-app-flutter-zio-hig
 git clone git@gitlab.com:vs-utils/utils-python.git
 git clone git@gitlab.com:vs-utils/opencv-utils-python.git
+git clone git@gitlab.com:vs-utils/sbt-common-tasks.git
 git clone git@gitlab.com:vs-utils/media-utils-scala.git
 git clone git@gitlab.com:vs-utils/common-utils-python.git
 git clone git@gitlab.com:vs-utils/media-utils-python.git
