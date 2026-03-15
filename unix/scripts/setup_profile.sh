@@ -50,12 +50,15 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export CUDA_HOME=/usr/local/cuda
 
 # disable CUDA
-# export CUDA_VISIBLE_DEVICES=-1
+export CUDA_VISIBLE_DEVICES=-1
 # unset CUDA_VISIBLE_DEVICES
+export DLIB_USE_CUDA=0
+export DLIB_PNG_SUPPORT=1
+export DLIB_JPEG_SUPPORT=1
 
 # enable CUDA
-export TF_FORCE_GPU_ALLOW_GROWTH=true
-export MY_GPU_LIMIT=1024
+# export TF_FORCE_GPU_ALLOW_GROWTH=true
+# export MY_GPU_LIMIT=1024
 
 sstatus(){
   sudo systemctl status $1

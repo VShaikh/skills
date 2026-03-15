@@ -103,8 +103,8 @@ sudo mv /tmp/postman.desktop /usr/share/applications/
 tar -xvzf solr-9.9.0.tgz
 sudo mv solr-9.9.0 /opt/
 sudo ln -s /opt/solr-9.9.0 /opt/solr
-sudo chmod 755 /opt/solr -R
-sudo chown vahid:vahid /opt/solr -R
+sudo chmod 755 /opt/solr-9.9.0 -R
+sudo chown vahid:vahid /opt/solr-9.9.0 -R
 ```
 # install pycharm
 ```
