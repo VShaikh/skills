@@ -21,8 +21,10 @@ sudo firewall-cmd --reload
 
 sudo firewall-cmd --zone=trusted --add-port=9000/tcp --permanent
 sudo firewall-cmd --zone=trusted --add-port=9001/tcp --permanent
+sudo firewall-cmd --zone=trusted --add-port=8983/tcp --permanent
 sudo firewall-cmd --reload
 
+sudo firewall-cmd --zone=trusted --list-ports
 
 ```
 

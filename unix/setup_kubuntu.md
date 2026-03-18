@@ -38,7 +38,8 @@ git clone git@gitlab.com:vs-utils/media-utils-python.git
 ```
 # insall android studio
 ```
-tar -xvzf android-studio-*.tar.gz
+rm -fr android-studio
+tar -xvzf android-studio-2025.2.1.8-linux.tar.gz
 sudo mv android-studio /opt/
 sudo chmod 755 /opt/android-studio -R
 sudo chown vahid:vahid /opt/android-studio -R
@@ -111,8 +112,8 @@ sudo chown vahid:vahid /opt/solr-9.9.0 -R
 tar -xvzf pycharm-2025.2.4.tar.gz
 sudo mv pycharm-2025.2.4 /opt/
 sudo ln -s /opt/pycharm-2025.2.4 /opt/pycharm
-sudo chmod 755 /opt/pycharm -R
-sudo chown vahid:vahid /opt/pycharm -R
+sudo chmod 755 /opt/pycharm/ -R
+sudo chown vahid:vahid /opt/pycharm/ -R
 /opt/pycharm/bin/pycharm
 ```
 
@@ -134,6 +135,7 @@ conda tos accept
 
 ## create systemd / systemctl service for pypi
 ```shell
+gedit /home/vahid/.config/pip/pip.conf
 conda
 conda create -n pypi python=3.12.0 -y
 conda activate pypi
