@@ -52,6 +52,7 @@ export CUDA_HOME=/usr/local/cuda
 # disable CUDA
 export CUDA_VISIBLE_DEVICES=-1
 # unset CUDA_VISIBLE_DEVICES
+TF_CPP_MIN_LOG_LEVEL=3
 export DLIB_USE_CUDA=0
 export DLIB_PNG_SUPPORT=1
 export DLIB_JPEG_SUPPORT=1
