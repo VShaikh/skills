@@ -62,9 +62,8 @@ setenforce 0
 open port 8983 in firewalld
 
 sudo systemctl daemon-reload
-sudo systemctl start solr.service
 sudo systemctl enable solr.service
-sudo systemctl stop solr.service
+
 sudo systemctl restart solr.service
 sudo systemctl status solr.service
 sudo systemctl show solr.service
