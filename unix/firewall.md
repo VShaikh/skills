@@ -19,6 +19,8 @@ sudo firewall-cmd --get-active-zones
 sudo firewall-cmd --permanent --zone=trusted --add-source=192.168.1.102
 sudo firewall-cmd --reload
 
+sudo firewall-cmd --zone=trusted --add-port=8000/tcp --permanent
+sudo firewall-cmd --zone=trusted --add-port=8001/tcp --permanent
 sudo firewall-cmd --zone=trusted --add-port=9000/tcp --permanent
 sudo firewall-cmd --zone=trusted --add-port=9001/tcp --permanent
 sudo firewall-cmd --zone=trusted --add-port=8983/tcp --permanent

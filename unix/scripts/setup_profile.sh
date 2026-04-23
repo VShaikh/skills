@@ -49,6 +49,9 @@ export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export CUDA_HOME=/usr/local/cuda
 
+# allow flutter linux apps to install in local
+CMAKE_INSTALL_PREFIX=/home/vahid/.local
+
 # disable CUDA
 export CUDA_VISIBLE_DEVICES=-1
 # unset CUDA_VISIBLE_DEVICES
