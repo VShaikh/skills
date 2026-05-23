@@ -35,6 +35,7 @@ git clone git@gitlab.com:vs-utils/sbt-common-tasks.git
 git clone git@gitlab.com:vs-utils/media-utils-scala.git
 git clone git@gitlab.com:vs-utils/common-utils-python.git
 git clone git@gitlab.com:vs-utils/media-utils-python.git
+git clone git@gitlab.com:vs-utils/machine-learning-python.git
 ```
 # insall android studio
 ```
