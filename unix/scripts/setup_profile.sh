@@ -52,6 +52,8 @@ export CUDA_HOME=/usr/local/cuda
 # allow flutter linux apps to install in local
 CMAKE_INSTALL_PREFIX=/home/vahid/.local
 
+export GI_TYPELIB_PATH=/usr/lib/x86_64-linux-gnu/girepository-1.0
+
 # disable CUDA
 export CUDA_VISIBLE_DEVICES=-1
 # unset CUDA_VISIBLE_DEVICES
