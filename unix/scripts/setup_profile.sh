@@ -99,6 +99,32 @@ pip3v(){
   /home/vahid/.venv/bin/pip3
 }
 
+mvfind() {
+  if [ "$#" -ne 2 ]; then
+    echo "Usage: mvfind <file_pattern> <destination_folder>"
+    return 1
+  fi
+
+  find . -type f -iname "$1" -exec bash -c '
+    target="$1"
+    shift
+    for file; do
+      base=$(basename "$file")
+      name="${base%.*}"
+      ext="${base##*.}"
+      dest="$target/$base"
+      count=1
+      
+      while [ -e "$dest" ]; do
+        dest="$target/${name}_${count}.${ext}"
+        ((count++))
+      done
+      
+      mv "$file" "$dest"
+    done
+  ' _ "$2" {} +
+}
+
 # Faster Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
