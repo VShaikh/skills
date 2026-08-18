@@ -61,6 +61,14 @@ sudo chown vahid:vahid /opt/flutter -R
 
 flutter doctor --android-licenses
 flutter doctor
+
+cd $(dirname $(dirname $(which flutter)))
+git fetch --tags
+git checkout 3.38.2
+
+dart pub global activate fvm
+fvm install 3.38.2
+fvm use 3.38.2
 ```
 # install IntelliJ Idea
 ```
