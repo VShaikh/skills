@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# 1. Resolve directory containing this script (handles symlinks)
+PRG="$0"
+while [ -h "$PRG" ]; do
+  ls=$(ls -ld "$PRG")
+  link=$(expr "$ls" : '.*-> \(.*\)$')
+  if expr "$link" : '/.*' > /dev/null; then
+    PRG="$link"
+  else
+    PRG="$(dirname "$PRG")/$link"
+  fi
+done
+BIN_DIR="$(cd -P "$(dirname "$PRG")" && pwd)"
+
+# 2. Locate JAR file (checks beside script or in standard lib directory)
+LAUNCHER_JAR=""
+CANDIDATES=(
+  "${BIN_DIR}/sbt-launch.jar"
+  "${BIN_DIR}/sbt-launcher.jar"
+  "${BIN_DIR}/../lib/sbt-launch.jar"
+  "${BIN_DIR}/lib/sbt-launch.jar"
+)
+
+for jar in "${CANDIDATES[@]}"; do
+  if [ -f "$jar" ]; then
+    LAUNCHER_JAR="$jar"
+    break
+  fi
+done
+
+if [ -z "$LAUNCHER_JAR" ]; then
+  echo "Error: Could not locate sbt launcher JAR." >&2
+  echo "Searched locations:" >&2
+  for jar in "${CANDIDATES[@]}"; do
+    echo "  - $jar" >&2
+  done
+  exit 1
+fi
+
+# 3. Locate Java runtime
+if [ -n "${JAVA_HOME:-}" ] && [ -x "${JAVA_HOME}/bin/java" ]; then
+  JAVA_CMD="${JAVA_HOME}/bin/java"
+elif command -v java >/dev/null 2>&1; then
+  JAVA_CMD="java"
+else
+  echo "Error: Java runtime not found. Set JAVA_HOME or add 'java' to PATH." >&2
+  exit 1
+fi
+
+# 4. Configure JVM memory and tuning flags (Java 17/21+ compatible)
+DEFAULT_JVM_OPTS=(
+  -Xms1024M
+  -Xmx2048M
+  -Xss2M
+  -XX:+UseG1GC
+  -Dfile.encoding=UTF-8
+)
+
+# Read per-project options file (.sbtopts) if present
+PROJECT_OPTS=()
+if [ -f ".sbtopts" ]; then
+  while IFS= read -r opt || [ -n "$opt" ]; do
+    [[ "$opt" =~ ^[[:space:]]*# ]] && continue
+    [[ -z "${opt// }" ]] && continue
+    PROJECT_OPTS+=("$opt")
+  done < ".sbtopts"
+fi
+
+# Read per-project JVM options (.jvmopts) if present
+if [ -f ".jvmopts" ]; then
+  while IFS= read -r opt || [ -n "$opt" ]; do
+    [[ "$opt" =~ ^[[:space:]]*# ]] && continue
+    [[ -z "${opt// }" ]] && continue
+    PROJECT_OPTS+=("$opt")
+  done < ".jvmopts"
+fi
+
+# 5. Execute sbt-launch.jar
+exec "$JAVA_CMD" \
+  ${JAVA_OPTS:-} \
+  ${SBT_OPTS:-} \
+  "${DEFAULT_JVM_OPTS[@]}" \
+  "${PROJECT_OPTS[@]}" \
+  -jar "$LAUNCHER_JAR" \
+  "$@"
