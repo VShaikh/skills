@@ -1,6 +1,6 @@
 ## Desktop shortcuts
 
-```
+```shell
 mkdir /opt/kdenlive/
 wget -D /opt/kdenlive/icon.png https://discuss-cdn.kde.org/uploads/default/original/2X/2/2de3adc075365366f68ce84da881a5a9d4c9efc4.png
 sudo gedit /usr/share/applications/kdenlive.desktop
@@ -90,4 +90,22 @@ Categories=Network;WebBrowser;
 Keywords=web;browser;internet;
 Actions=new-window;new-private-window;profile-manager-window;
 
+```
+
+```shell
+sudo ln -s /opt/Antigravity-x64 /opt/antigravity
+
+[Desktop Entry]
+Type=Application
+Name=Antigravity
+GenericName=Music Application
+Icon=/opt/antigravity/antigravity.png
+Exec=/opt/antigravity/antigravity %u
+Categories=IDE;Media;
+Keywords=AI;IDE;Application;
+StartupNotify=true
+```
+
+```shell
+sudo update-desktop-database
 ```
